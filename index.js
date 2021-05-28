@@ -215,7 +215,7 @@ app.get('/badum', function (req, res) {
 
 // !wow
 app.get('/wow', function (req, res) {
-  client.say(config.default_channel, `!mimimi`);
+  client.say(config.default_channel, `!wow`);
   res.send('done');
 });
 
