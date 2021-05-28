@@ -126,6 +126,23 @@ app.get('/zwingor', function (req, res) {
   res.send('done');
 });
 
+// !timer info
+app.get('/timer-info', function (req, res) {
+  client.say(config.default_channel, `!timer info`);
+  res.send('done');
+});
+
+// !timer start
+app.get('/timer-start', function (req, res) {
+  client.say(config.default_channel, `!timer start`);
+  res.send('done');
+});
+
+// !timer stop
+app.get('/timer-stop', function (req, res) {
+  client.say(config.default_channel, `!timer stop`);
+  res.send('done');
+});
 
 // Bot SOUND commands
 // ==================
@@ -148,7 +165,7 @@ app.get('/mimimi', function (req, res) {
   res.send('done');
 });
 
-// !nix-gemacht
+// !nixgemacht
 app.get('/nix-gemacht', function (req, res) {
   client.say(config.default_channel, `!nixgemacht`);
   res.send('done');
@@ -214,17 +231,13 @@ app.get('/move', function (req, res) {
   res.send('done');
 });
 
-// !alarm
-app.get('/alarm', function (req, res) {
-  client.say(config.default_channel, `!alarm`);
-  res.send('done');
-});
-
 // !sehnix
 app.get('/sehnix', function (req, res) {
   client.say(config.default_channel, `!sehnix`);
   res.send('done');
 });
+
+
 
 
 

@@ -5,5 +5,5 @@ module.exports = {
     'JosYMovieS',
     'lampe385'
   ],
-  default_channel: 'JosYMovieS'
+  default_channel: 'lampe385'
 }
