@@ -44,7 +44,7 @@ client.connect();
 
 client.on('connected', (address, port) => {
   console.log(`Connected: ${address}:${port}`);
-  client.color('Red');
+  // client.color('#2c46ff');
 });
 
 client.on('join', (channel, username, self) => {
