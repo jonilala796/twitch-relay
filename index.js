@@ -238,7 +238,25 @@ app.get('/sehnix', function (req, res) {
 });
 
 
+// Sonder commands
 
+// !special
+app.get('/special', function (req, res) {
+  client.say(config.default_channel, `!special`);
+  res.send('done');
+});
+
+// !giveaway
+app.get('/giveaway', function (req, res) {
+  client.say(config.default_channel, `!giveaway`);
+  res.send('done');
+});
+
+// !rabatt
+app.get('/rabatt', function (req, res) {
+  client.say(config.default_channel, `!rabatt`);
+  res.send('done');
+});
 
 
 // Change the 404 message modifing the middleware
