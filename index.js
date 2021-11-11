@@ -237,6 +237,11 @@ app.get('/sehnix', function (req, res) {
   res.send('done');
 });
 
+// !battery
+app.get('/battery', function (req, res) {
+  client.say(config.default_channel, `!battery`);
+  res.send('done');
+});
 
 // Sonder commands
 
