@@ -104,13 +104,19 @@ app.get('/ref-allg', function (req, res) {
 
 // !socials
 app.get('/socials', function (req, res) {
+  client.say(config.default_channel, `!allsocials`);
+  res.send('done');
+});
+
+// !socials
+app.get('/short-socials', function (req, res) {
   client.say(config.default_channel, `!socials`);
   res.send('done');
 });
 
-// !website
+// !webseite
 app.get('/website', function (req, res) {
-  client.say(config.default_channel, `!website`);
+  client.say(config.default_channel, `!webseite`);
   res.send('done');
 });
 
