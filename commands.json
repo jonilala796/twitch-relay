@@ -1,0 +1,114 @@
+[
+  {
+    "name": "rules",
+    "response": "!rules hier nochmal die Chat-Regeln zum Nachlesen:"
+  },
+  {
+    "name": "werke",
+    "response": "Unter !portfolio und !instagram könnt ihr Josys andere Werke sehen josyHype"
+  },
+  {
+    "name": "ref-allg",
+    "response": "Unter !ref könnt ihr euch die Vorlage der aktuellen Arbeit einsehen josyLove"
+  },
+  {
+    "name": "socials",
+    "response": "!allsocials"
+  },
+  {
+    "name": "short-socials",
+    "response": "!socials"
+  },
+  {
+    "name": "website",
+    "response": "!webseite"
+  },
+  {
+    "name": "heist",
+    "response": "!raubzug 250"
+  },
+  {
+    "name": "zwingor",
+    "response": "Bitte nutzt keine Zwinkersmilies josyZwingor"
+  },
+  {
+    "name": "timer-info",
+    "response": "!timer info"
+  },
+  {
+    "name": "timer-start",
+    "response": "!timer start"
+  },
+  {
+    "name": "timer-stop",
+    "response": "!timer stop"
+  },
+  {
+    "name": "alarm",
+    "response": "!alarm"
+  },
+  {
+    "name": "alarm-aus",
+    "response": "!alarm aus"
+  },
+  {
+    "name": "mimimi",
+    "response": "!mimimi"
+  },
+  {
+    "name": "nix-gemacht",
+    "response": "!nixgemacht"
+  },
+  {
+    "name": "kitty",
+    "response": "!kitty"
+  },
+  {
+    "name": "magge",
+    "response": "!magge"
+  },
+  {
+    "name": "spaet",
+    "response": "!spät"
+  },
+  {
+    "name": "danger",
+    "response": "!danger"
+  },
+  {
+    "name": "pewpew",
+    "response": "!pewpew"
+  },
+  {
+    "name": "oh-no",
+    "response": "!ohno"
+  },
+  {
+    "name": "badum",
+    "response": "!badum"
+  },
+  {
+    "name": "wow",
+    "response": "!wow"
+  },
+  {
+    "name": "oh-yeah",
+    "response": "!ohyeah"
+  },
+  {
+    "name": "move",
+    "response": "!move"
+  },
+  {
+    "name": "sehnix",
+    "response": "!sehnix"
+  },
+  {
+    "name": "battery",
+    "response": "!battery"
+  },
+  {
+    "name": "giveaway",
+    "response": "!giveaway"
+  }
+]

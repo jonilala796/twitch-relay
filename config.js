@@ -4,6 +4,5 @@ module.exports = {
   channels: [
     'JosYMovieS',
     'lampe385'
-  ],
-  default_channel: 'JosYMovieS'
+  ]
 }

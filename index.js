@@ -3,12 +3,15 @@
  * NodeJS Twitch get-request to twitch chat relay via tmi.js
  *
  * @author    Benjamin Deutscher <ben@bdeutscher.org>
- * @version   1.0.0
+ * @version   2.0.0
  * @copyright 28.05.2021 Benjamin Deutscher
  */
 console.log(`Lampe385 Twitch get-request to twitch chat relay (NodeJS ${process.version})`);
 let tmi, client;
+const fs = require('fs');
 var config;
+const parseArgs = require('minimist');
+const args = parseArgs((process.argv.slice(2)));
 let { Resolver } = require('dns').promises;
 let dns = new Resolver({'timeout': 750});
 dns.setServers(['1.1.1.1', '8.8.8.8']);
@@ -71,6 +74,7 @@ process.on('SIGINT', function() {
 var express = require('express');
 var app = express();
 
+
 // on the request to root (localhost:3000/)
 app.get('/', function (req, res) {
   res.send('<b>My</b> first express http server');
@@ -81,193 +85,23 @@ app.listen(5555, function () {
   console.log('Twitch get-request to chat relay listening on port 5555.');
 });
 
-// Bot TEXT commands
-// =================
-
-// !rules
-app.get('/rules', function (req, res) {
-  client.say(config.default_channel, `!rules hier nochmal die Chat-Regeln zum Nachlesen:`);
-  res.send('done');
-});
-
-// !werke
-app.get('/werke', function (req, res) {
-  client.say(config.default_channel, `Unter !portfolio und !instagram könnt ihr Josys andere Werke sehen josyHype`);
-  res.send('done');
-});
-
-// !ref-allg
-app.get('/ref-allg', function (req, res) {
-  client.say(config.default_channel, `Unter !ref könnt ihr euch die Vorlage der aktuellen Arbeit einsehen josyLove`);
-  res.send('done');
-});
-
-// !socials
-app.get('/socials', function (req, res) {
-  client.say(config.default_channel, `!allsocials`);
-  res.send('done');
-});
-
-// !socials
-app.get('/short-socials', function (req, res) {
-  client.say(config.default_channel, `!socials`);
-  res.send('done');
-});
-
-// !webseite
-app.get('/website', function (req, res) {
-  client.say(config.default_channel, `!webseite`);
-  res.send('done');
-});
-
-// !raubzug 250
-app.get('/heist', function (req, res) {
-  client.say(config.default_channel, `!raubzug 250`);
-  res.send('done');
-});
-
-// kein Zwingor
-app.get('/zwingor', function (req, res) {
-  client.say(config.default_channel, `Bitte nutzt keine Zwinkersmilies josyZwingor`);
-  res.send('done');
-});
-
-// !timer info
-app.get('/timer-info', function (req, res) {
-  client.say(config.default_channel, `!timer info`);
-  res.send('done');
-});
-
-// !timer start
-app.get('/timer-start', function (req, res) {
-  client.say(config.default_channel, `!timer start`);
-  res.send('done');
-});
-
-// !timer stop
-app.get('/timer-stop', function (req, res) {
-  client.say(config.default_channel, `!timer stop`);
-  res.send('done');
-});
-
-// Bot SOUND commands
-// ==================
-
-// !alarm
-app.get('/alarm', function (req, res) {
-  client.say(config.default_channel, `!alarm`);
-  res.send('done');
-});
-
-// saechsisch aus
-app.get('/alarm-aus', function (req, res) {
-  client.say(config.default_channel, `!alarm aus`);
-  res.send('done');
-});
-
-// !mimimi
-app.get('/mimimi', function (req, res) {
-  client.say(config.default_channel, `!mimimi`);
-  res.send('done');
-});
-
-// !nixgemacht
-app.get('/nix-gemacht', function (req, res) {
-  client.say(config.default_channel, `!nixgemacht`);
-  res.send('done');
-});
-
-// !kitty
-app.get('/kitty', function (req, res) {
-  client.say(config.default_channel, `!kitty`);
-  res.send('done');
-});
-
-// !magge
-app.get('/magge', function (req, res) {
-  client.say(config.default_channel, `!magge`);
-  res.send('done');
-});
-
-// !spät
-app.get('/spaet', function (req, res) {
-  client.say(config.default_channel, `!spät`);
-  res.send('done');
-});
-
-// !danger
-app.get('/danger', function (req, res) {
-  client.say(config.default_channel, `!danger`);
-  res.send('done');
-});
-
-// !pewpew
-app.get('/pewpew', function (req, res) {
-  client.say(config.default_channel, `!pewpew`);
-  res.send('done');
-});
-
-// !ohno
-app.get('/oh-no', function (req, res) {
-  client.say(config.default_channel, `!ohno`);
-  res.send('done');
-});
-
-// !badum
-app.get('/badum', function (req, res) {
-  client.say(config.default_channel, `!badum`);
-  res.send('done');
-});
-
-// !wow
-app.get('/wow', function (req, res) {
-  client.say(config.default_channel, `!wow`);
-  res.send('done');
-});
-
-// !ohyeah
-app.get('/oh-yeah', function (req, res) {
-  client.say(config.default_channel, `!ohyeah`);
-  res.send('done');
-});
-
-// !move
-app.get('/move', function (req, res) {
-  client.say(config.default_channel, `!move`);
-  res.send('done');
-});
-
-// !sehnix
-app.get('/sehnix', function (req, res) {
-  client.say(config.default_channel, `!sehnix`);
-  res.send('done');
-});
-
-// !battery
-app.get('/battery', function (req, res) {
-  client.say(config.default_channel, `!battery`);
-  res.send('done');
-});
-
-// Sonder commands
-
-// !special
-app.get('/special', function (req, res) {
-  client.say(config.default_channel, `!special`);
-  res.send('done');
-});
-
-// !giveaway
-app.get('/giveaway', function (req, res) {
-  client.say(config.default_channel, `!giveaway`);
-  res.send('done');
-});
-
-// !rabatt
-app.get('/rabatt', function (req, res) {
-  client.say(config.default_channel, `!rabatt`);
-  res.send('done');
-});
+try {
+  const data = fs.readFileSync('./commands.json', 'utf8');
+  const commands = JSON.parse(data);
+  console.log("    Available Commands:")
+  commands.forEach(cmd => {
+    console.log(`${cmd.name.padStart(20, ' ')}: ${cmd.response}`);
+     app.get(`/${cmd.name}`, function (req, res) {
+       client.say(args.channel, `${cmd.response}`);
+       res.send('done');
+     });
+  });
+  console.log("========================================");
+} catch (err) {
+  console.log(`Error reading file from disk: ${err}`);
+}
+console.log(`ANSWERING IN CHANNEL: >>> ${args.channel} <<<`);
+console.log("========================================");
 
 
 // Change the 404 message modifing the middleware
