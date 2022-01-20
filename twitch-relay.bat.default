@@ -1,0 +1,4 @@
+@echo off
+
+cd C:\PATH\TO\YOUR\FOLDER\
+node index.js --channel THE_CHANNEL_TO_ANSWER_IN

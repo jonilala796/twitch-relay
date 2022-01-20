@@ -25,6 +25,25 @@ node index.js --channel lampe385
 
 You can stop your relay with `[Ctrl] + [C]`.
 
+## Windows only
+You can use the twitch-relay.bat to start your local relay.
+
+To set it up correctly follow these instructions:
+1. Rename `twitch-relay.bat.default` to `twitch-relay.bat`
+2. Open the file `twitch-relay.bat`
+3. Replace `PATH/TO/YOUR/FOLDER/` with the real path to your relay. (e.g.: C:\Users\lampe385\workspace\twitch-relay)
+4. Replace `THE_CHANNEL_TO_ANSWER_IN` with the channel you want the relay to answer in. (e.g.: lampe385)
+5. Save the file.
+6. Execute the file.
+7. You may need to allow it to communicate through the fire wall.
+
+If everything worked you command prompt should look like this:
+
+![](images/relay-running.png)
+
+
+You can stop your relay with `[Ctrl] + [C]`.
+
 # Setup your Stream Deck
 Use the "website" action of your Stream Deck an configure it like shown below:
 
