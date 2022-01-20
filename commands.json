@@ -110,5 +110,13 @@
   {
     "name": "giveaway",
     "response": "!giveaway"
+  },
+  {
+    "name": "stifte",
+    "response": "Josy nutzt für die Grundierung Pastellkreide (Polychromos Pastel) und für die Details Buntstifte (Polychromos) von Farber-Castell"
+  },
+  {
+    "name": "papier",
+    "response": "Aquarellpapier: Solo Goya Water Color - KREUL | Papier (für Buntstifte & Pastel): Pastelmat - Clairefontaine"
   }
 ]
