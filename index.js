@@ -10,11 +10,6 @@ console.log(`Lampe385 Twitch get-request to twitch chat relay (NodeJS ${process.
 let tmi, client;
 const fs = require('fs');
 var config;
-const parseArgs = require('minimist');
-const args = parseArgs((process.argv.slice(2)));
-let { Resolver } = require('dns').promises;
-let dns = new Resolver({'timeout': 750});
-dns.setServers(['1.1.1.1', '8.8.8.8']);
 require('log-timestamp');
 
 try {
@@ -45,9 +40,9 @@ client = new tmi.Client({
 });
 client.connect();
 
+// Twitch CLIENT EVENTS
 client.on('connected', (address, port) => {
   console.log(`Connected: ${address}:${port}`);
-  // client.color('#2c46ff');
 });
 
 client.on('join', (channel, username, self) => {
@@ -70,12 +65,12 @@ process.on('SIGINT', function() {
   process.exit();
 });
 
-// Require express and create an instance of it
+
+// LOCAL WEBSERVER SETUP
 var express = require('express');
 var app = express();
 
-
-// on the request to root (localhost:3000/)
+// on the request to root (localhost:5555/)
 app.get('/', function (req, res) {
   res.send('<b>My</b> first express http server');
 });
@@ -85,28 +80,32 @@ app.listen(5555, function () {
   console.log('Twitch get-request to chat relay listening on port 5555.');
 });
 
+// Setup dynamic routes like
+// http://localhost:5555/CHANNELNAME/COMMANDNAME
 try {
   const data = fs.readFileSync('./commands.json', 'utf8');
-  const commands = JSON.parse(data);
+  const cmd_conf = JSON.parse(data);
+
   console.log("    Available Commands:")
-  commands.forEach(cmd => {
-    console.log(`${cmd.name.padStart(20, ' ')}: ${cmd.response}`);
-     app.get(`/${cmd.name}`, function (req, res) {
-       client.say(args.channel, `${cmd.response}`);
-       res.send('done');
-     });
-  });
-  console.log("========================================");
+  for (const [channel, commands] of Object.entries(cmd_conf[0])) {
+    console.log(`    Channel: ${channel.padStart(19, ' ')}`);
+    console.log("========================================");
+    commands.forEach(cmd => {
+      console.log(`${cmd.name.padStart(20, ' ')}: ${cmd.response}`);
+      app.get(`/${channel}/${cmd.name}`, function (req, res) {
+        client.say(channel, `${cmd.response}`);
+        res.send('done');
+      });
+    })
+    console.log("========================================");
+  }
 } catch (err) {
   console.log(`Error reading file from disk: ${err}`);
 }
-console.log(`ANSWERING IN CHANNEL: >>> ${args.channel} <<<`);
-console.log("========================================");
-
 
 // Change the 404 message modifing the middleware
 app.use(function(req, res, next) {
-  res.status(404).send("Sorry, that route doesn't exist. Have a nice day :)");
+  res.status(404).send("Sorry, that route doesn't exist.");
 });
 
 // EOF

@@ -1,0 +1,34 @@
+[
+  {
+    "josymovies": [
+      {
+        "name": "hi",
+        "response": "Guten Morgen josyHi josyHug"
+      },
+      {
+        "name": "bye",
+        "response": "Tschüssi ihr Farbplabes josyHype josyLove"
+      }
+    ],
+    "scratcher86": [
+      {
+        "name": "hi",
+        "response": "Moin Moin ihr Handpumpen scratc24Hi scratc24Love"
+      },
+      {
+        "name": "bye",
+        "response": "Bis zum nächsten Mal Kammeraden scratc24Hi scratc24Love"
+      }
+    ],
+    "sintica": [
+      {
+        "name": "hi",
+        "response": "Hallo zusammen sinticaHuhu sinticaLove"
+      },
+      {
+        "name": "bye",
+        "response": "Haut rein sinticaBye sinticaVier"
+      }
+    ]
+  }
+]
