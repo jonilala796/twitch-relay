@@ -1,4 +1,4 @@
-# Twitch Releay
+# Twitch Relay
 Enables you to use your Stream Deck to post in other channels (than your own) without having to set the focus on the browser/chat window.
 
 # How to use
@@ -7,13 +7,13 @@ Ensure you have Node.js installed and available in your PATH. See here for [wind
 Download the repo whether by cloning it or downloading as zip (extract afterwards).
 
 1. Rename the `commands.json.default` to `commands.json` and edit it to your hearts desire.
-2. For each channel you want to send texts - setup a list of commands containing:
+2. For each channel you want to send texts - set up a list of commands containing:
    1. name is the command name and the localhost endpoint
    2. response is the response that should be answered with
 3. Get your personal oauth token [HERE](https://twitchapps.com/tmi/) - NEVER share it with anybody!
-4. Rename `config.json.default` to `config.json`
-5. Insert your oauth token in `config.json`
-6. Add the channels you want to join in `config.json`
+4. Rename `config.js.default` to `config.js`
+5. Insert your oauth token in `config.js`
+6. Add the channels you want to join in `config.js`
 7. Open a terminal and navigate to the folder containing the project.
 8. Install the required node modules with `npm install`
 9. Run the relay with `node index.js`
@@ -29,7 +29,7 @@ To set it up correctly follow these instructions:
 3. Replace `PATH/TO/YOUR/FOLDER/` with the real path to your relay. (e.g.: C:\Users\lampe385\workspace\twitch-relay)
 4. Save the file.
 5. Execute the file.
-6. You may need to allow it to communicate through the fire wall.
+6. You may need to allow it to communicate through the firewall.
 
 If everything worked you command prompt should look like this:
 
@@ -39,6 +39,6 @@ If everything worked you command prompt should look like this:
 You can stop your relay with `[Ctrl] + [C]`.
 
 # Setup your Stream Deck
-Use the "website" action of your Stream Deck an configure it like shown below:
+Use the "website" action of your Stream Deck and configure it like shown below:
 
 ![](images/streamdeck-setup.png)
